@@ -1,0 +1,44 @@
+@import-normalize;
+
+*, ::before, ::after {
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+  -webkit-overflow-scrolling: touch;
+  -webkit-tap-highlight-color: transparent;
+
+  @include mq($from: tablet) {
+    font-size: $baseFontSize;
+  }
+
+  @include mq($until: tablet) {
+    font-size: $mobileFontSize;
+  }
+}
+
+body, html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: $black;
+  box-sizing: border-box;
+  color: $mainTextColor;
+  font-family: $fontFamilyBase;
+  font-size: inherit;
+  font-weight: normal;
+  overflow-x: hidden;
+  z-index: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  @include mq($from: tablet) {
+    line-height: $lineHeightBase;
+  }
+
+  @include mq($until: tablet) {
+    line-height: $lineHeightMobile;
+  }
+}

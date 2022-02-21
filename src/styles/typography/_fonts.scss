@@ -1,0 +1,16 @@
+@include font-face(
+  $name: 'Fira Code',
+  $path: FiraCode-Regular,
+  $weight: 400,
+  $style: normal,
+  $display: swap,
+  $locals: 'Fira Code',
+);
+@include font-face(
+  $name: 'Fira Code',
+  $path: FiraCode-Bold,
+  $weight: 600,
+  $style: normal,
+  $display: swap,
+  $locals: 'Fira Code',
+);

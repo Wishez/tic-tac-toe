@@ -1,0 +1,23 @@
+$fontFamilyBase: 'Fira Code', sans-serif;
+$baseFontSize: 21px;
+$mobileFontSize: 18px;
+$lineHeightBase: 1.5;
+$lineHeightMobile: 1.43;
+
+// Sizes
+$pageContentMaxWidth: 1316px;
+
+// Colors
+$main: #EFCC4E;
+$secondary: #8BB479;
+$ordinary: #7A88B5;
+$black: #3C3E3F;
+$white: #fff;
+$mainTextColor: $white;
+
+// Curves
+$acceleration: cubic-bezier(0.4, 0, 1, 1);
+$sharp: cubic-bezier(0.4, 0, 0.6, 1);
+$deceleration: cubic-bezier(0, 0, 0.2, 1);
+$standard: cubic-bezier(0.4, 0, 0.2, 1);
+$smooth: cubic-bezier(.23,1,.32,1);

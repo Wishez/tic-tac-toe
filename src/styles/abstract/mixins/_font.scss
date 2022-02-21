@@ -1,0 +1,51 @@
+// $name - то что будет в font-family
+// $path -  название файла шрифта без кавычек и расширения
+// $weight - font-weight
+// $style - font-style
+// $display - font-display
+// $exts - расширения файлов которые необходимо подключить
+// $svgFontId - значение id из <font id="..."> в svg-файле шрифта
+// $locals - чтобы не загружать файлы шрифтов с сервера если они установлены в системе клиента
+
+@mixin font-face($name, $path, $weight: null, $style: null, $display: swap, $exts: woff2 woff, $svgFontId: null, $locals: null) {
+  $src: null;
+
+  $extMods: (
+    eot: "?#iefix",
+    svg: "#" + if($svgFontId, $svgFontId, str-replace($name, " ", "_"))
+  );
+
+  $formats: (
+    eot: "embedded-opentype",
+    otf: "opentype",
+    ttf: "truetype"
+  );
+
+  @if $locals {
+    @each $local in $locals {
+      $src: append($src, local($local), comma);
+    }
+  }
+
+  @each $ext in $exts {
+    $extMod: if(map-has-key($extMods, $ext), $ext + map-get($extMods, $ext), $ext);
+    $format: if(map-has-key($formats, $ext), map-get($formats, $ext), $ext);
+    /*stylelint-disable-next-line function-url-quotes*/
+    $src: append($src, url(quote("../../../fonts/#{$extMod}/#{$path}.#{$extMod}")) format(quote($format)), comma);
+  }
+
+  @font-face {
+    font-display: $display;
+    font-family: quote($name);
+    font-style: $style;
+    font-weight: $weight;
+    src: $src;
+  }
+}
+
+@mixin scaledRem($propertyName, $value, $mobileValue: false, $tabletValue: false) {
+  $mobileValueResult: if($mobileValue, $mobileValue, $value);
+  $tabletValueResult: if($tabletValue, rem($tabletValue), false);
+
+  @include mqProp($propertyName, rem($value), mRem($mobileValueResult), $tabletValueResult);
+}

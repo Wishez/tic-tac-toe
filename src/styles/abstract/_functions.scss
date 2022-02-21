@@ -1,0 +1,39 @@
+@function getRem($part, $base: 0.2rem) {
+  @return $part * $base;
+}
+
+@function rem($pixels, $context: $baseFontSize) {
+  @if (unitless($pixels)) {
+    $pixels: $pixels * 1px;
+  }
+
+  @if (unitless($context)) {
+    $context: $context * 1px;
+  }
+
+  @return math.div($pixels, $context) * 1rem;
+}
+
+@function mRem($value) {
+  @return rem($value, $mobileFontSize);
+}
+
+@function em($pixels, $context: $baseFontSize) {
+  @if (unitless($pixels)) {
+    $pixels: $pixels * 1px;
+  }
+
+  @if (unitless($context)) {
+    $context: $context * 1px;
+  }
+
+  @return math.div($pixels, $context) * 1em;
+}
+
+@function percent($part) {
+  @return math.div($part, 12) * 100%;
+}
+
+@function getRGB($color) {
+  @return red($color) + ", " + green($color) + ", " + blue($color);
+}

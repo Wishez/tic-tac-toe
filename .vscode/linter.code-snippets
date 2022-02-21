@@ -1,0 +1,16 @@
+{
+  "lint-line": {
+		"prefix": "lint-line",
+		"body": [
+			"//eslint-disable-next-line"
+		],
+		"description": "Дизейбл линтера на следующей линии"
+	},
+	"lint": {
+		"prefix": "lint",
+		"body": [
+			"/* eslint-disable $1 */"
+		],
+		"description": "Дизейбл линтера"
+	}
+}

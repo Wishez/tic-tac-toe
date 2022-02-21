@@ -1,0 +1,49 @@
+{
+	"d-export": {
+		"scope": "typescript,typescriptreact",
+		"prefix": "d-export",
+		"body": [
+			"export { default as $1 } from './$1'"
+		],
+		"description": "Экспорт дефотного компонента"
+	},
+	"title": {
+		"scope": "typescript,typescriptreact",
+		"prefix": "title",
+		"body": [
+			"<h$1 className=\"$3\">",
+			"  <FormattedMessage id=\"$2\" />",
+			"</h$1>"
+		],
+		"description": "Создание ранжированного заголовка"
+	},
+  "typed-fc": {
+		"scope": "typescript,typescriptreact",
+		"prefix": "typed-fc",
+		"body": [
+			"import React, { FC } from 'react'",
+			"import { I$1Props } from './interfaces'",
+			"import './$1.scss'",
+			"",
+			"const $1: FC<I$1Props> = ({ $2 }) => (",
+			"	<>",
+			"		$3",
+			"	</>",
+			")",
+			"",
+			"export default $1",
+			""
+		],
+		"description": "Создание типизированного функционального компонента"
+	},
+  "pack": {
+		"prefix": "pack",
+		"body": [
+			"{",
+			"  \"main\": \"$1.tsx\"",
+			"}",
+			""
+		],
+		"description": "Создание package.json "
+	}
+}

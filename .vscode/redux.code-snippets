@@ -1,0 +1,121 @@
+{
+	"map-state": {
+		"scope": "typescript,typescriptreact",
+		"prefix": "map-state",
+		"body": [
+			"const mapState = (state: RootState) => ({",
+			"  $1",
+			"})",
+			""
+		],
+		"description": "Создаёт функцию маппинга стейта"
+	},
+	"use-dispatch": {
+		"scope": "typescript,typescriptreact",
+		"prefix": "use-dispatch",
+		"body": [
+			"const dispatch = useDispatch()",
+		],
+		"description": "Создаёт диспатч"
+	},
+	"use-select": {
+		"scope": "typescript,typescriptreact",
+		"prefix": "use-select",
+		"body": [
+			"const { $1 } = useSelector(mapState)",
+		],
+		"description": "Создаёт селектор стейта"
+	},
+  "redux-interfaces": {
+		"scope": "typescript,typescriptreact",
+		"prefix": "redux-interfaces",
+		"body": [
+			"export interface I$1OwnProps {",
+			"",
+			"}",
+			"",
+			"export interface I$1DispatchProps {",
+			"",
+			"}",
+			"",
+			"export interface I$1StateProps {",
+			"",
+			"}",
+			"",
+			"export type T$1Props = I$1OwnProps & I$1StateProps & I$1DispatchProps",
+			""
+		],
+		"description": "Создание интерфейсов и типов для конекта компонента"
+	},
+	"redux-connection": {
+		"scope": "typescript,typescriptreact",
+		"prefix": "redux-connection",
+		"body": [
+			"const mapStateToProps: MapStateToProps<I$1StateProps, I$1OwnProps, RootState> = state => ({",
+			"",
+			"})",
+			"",
+			"const mapDispatchToProps: MapDispatchToProps<I$1DispatchProps, I$1OwnProps> = dispatch => ({",
+			"",
+			"})",
+			"",
+			"export default connect(mapStateToProps, mapDispatchToProps)($1)",
+			""
+		],
+		"description": "Создание коннекта компонента"
+	},
+  "redux-get": {
+		"scope": "typescript,typescriptreact",
+		"prefix": "redux-get",
+		"body": [
+			"export const get$1 = () => (state: RootState) => state.$2.$3",
+		],
+		"description": "Создание селектора"
+	},
+	"redux-tools-get": {
+		"scope": "typescript,typescriptreact",
+		"prefix": "redux-tools-get",
+		"body": [
+			"export const get$1 = createSelector(",
+				"get$2(),",
+				"({ $3 }) => $4,",
+			")",
+		],
+		"description": "Создание комбинированного селектора"
+	},
+	"redux-action": {
+		"scope": "typescript,typescriptreact",
+		"prefix": "redux-action",
+		"body": [
+			"export const $1 = createAction<N$4Action.I$1>('@@$2/$3')",
+		],
+		"description": "Создание комбинированного селектора"
+	},
+  "redux-reducer": {
+		"prefix": "redux-reducer",
+		"body": [
+			"import { createReducer } from '@reduxjs/toolkit'",
+			"",
+			"export interface I$1State {",
+			"	$5",
+			"}",
+			"",
+			"const initialState: I$1State = {",
+			"	$5",
+			"}",
+			"",
+			"const reducerName = '$3'",
+			"const reducer = createReducer(getInitialState(reducerName, initialState), {",
+			"	[$2.type]: (state) => {",
+			"		$6",
+			"	},",
+			"})",
+			"",
+			"reducerManager.add(reducerName, reducer)",
+			"",
+			"export const get$4 = () => (state: RootState) => state[reducerName].$4",
+			"",
+		],
+		"description": "Создание редусера"
+	}
+}

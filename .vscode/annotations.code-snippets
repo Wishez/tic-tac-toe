@@ -1,0 +1,42 @@
+{
+  "ti": {
+		"prefix": "ti",
+		"body": [
+			"export interface I$1 {",
+			"	$2",
+			"}",
+			"",
+		],
+		"description": "Создание интерфейса"
+	},
+	"tt": {
+		"prefix": "tt",
+		"body": [
+			"export type T$1 = $2",
+			"",
+		],
+		"description": "Создание типа"
+	},
+	"te": {
+		"prefix": "te",
+		"body": [
+			"export enum E$1 {",
+			"  $2",
+			"}",
+			""
+		],
+		"description": "Создание енама"
+	},
+	"action-n": {
+		"prefix": "action-n",
+		"body": [
+			"export declare namespace N$1Action {",
+			"  interface I$2 {",
+			"    $3",
+			"  }",
+			"}",
+			""
+		],
+		"description": "Создание неймспейса экшонов"
+	}
+}

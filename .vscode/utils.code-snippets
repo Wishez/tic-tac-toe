@@ -1,0 +1,9 @@
+{
+  "lodash": {
+		"prefix": "lodash",
+		"body": [
+			"import $1 from 'lodash/$1'"
+		],
+		"description": "Импорт lodash хелпера"
+	}
+}

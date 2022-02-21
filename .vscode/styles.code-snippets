@@ -1,0 +1,51 @@
+{
+  "mq-from": {
+		"prefix": "mq-from",
+		"body": [
+			"@include mq($$from: $1) {",
+			"	$2",
+			"}",
+		],
+		"description": "Создание медиа запроса от минимальной ширины экрана"
+	},
+	"mq-tablet": {
+		"prefix": "mq-tablet",
+		"body": [
+			"@include mq($$from: tablet, $$until: desktop) {",
+			"	$1",
+			"}",
+		],
+		"description": "Создание медиа запроса для планшета"
+	},
+	"mq-until": {
+		"prefix": "mq-until",
+		"body": [
+			"@include mq($$until: $1) {",
+			"	$2",
+			"}",
+		],
+		"description": "Создание медиа запроса от максимальной ширины экрана"
+	},
+  "fslh": {
+		"prefix": "fslh",
+		"body": [
+			"font-size: rem($1);",
+			"line-height: em($2, $1);",
+		],
+		"description": "Создание интерлиньяжа "
+	},
+	"scaled-rem": {
+		"prefix": "scaled-rem",
+		"body": [
+			"@include scaledRem('$1', $2);",
+		],
+		"description": "Миксин для одинаковых rem значений на мобике и десктопе"
+	},
+	"mq-prop": {
+		"prefix": "mq-prop",
+		"body": [
+			"@include mqProp('$1', $2, $3);",
+		],
+		"description": "Миксин для разных значений на мобике и десктопе"
+	}
+}

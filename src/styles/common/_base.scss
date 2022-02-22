@@ -28,11 +28,12 @@ body {
   color: $mainTextColor;
   font-family: $fontFamilyBase;
   font-size: inherit;
-  font-weight: normal;
-  overflow-x: hidden;
-  z-index: 1;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-weight: normal;
+  margin: 0;
+  overflow-x: hidden;
+  z-index: 1;
 
   @include mq($from: tablet) {
     line-height: $lineHeightBase;

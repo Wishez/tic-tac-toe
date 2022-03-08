@@ -1,0 +1,26 @@
+@import "@/styles/abstract";
+
+.game-panel-row {
+  border: 0 solid $ordinary;
+  border-left-width: 2px;
+  border-right-width: 2px;
+  display: flex;
+  transition: border-color 200ms $sharp;
+
+  &:first-child {
+    border-top-width: 2px;
+  }
+
+  &:last-child {
+    border-bottom-width: 2px;
+  }
+}
+
+.game-panel {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: center;
+  overflow: hidden;
+}

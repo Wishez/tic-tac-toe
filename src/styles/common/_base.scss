@@ -23,6 +23,8 @@ body, html {
 }
 
 body {
+  @include mqProp('line-height', $lineHeightBase, $lineHeightMobile);
+
   background-color: $black;
   box-sizing: border-box;
   color: $mainTextColor;
@@ -34,12 +36,4 @@ body {
   margin: 0;
   overflow-x: hidden;
   z-index: 1;
-
-  @include mq($from: tablet) {
-    line-height: $lineHeightBase;
-  }
-
-  @include mq($until: tablet) {
-    line-height: $lineHeightMobile;
-  }
 }

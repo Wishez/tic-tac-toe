@@ -1,0 +1,16 @@
+.control-panel {
+  bottom: 0;
+  left: 50%;
+  position: fixed;
+  transform: translateX(-50%);
+}
+
+.control-panel-actions {
+  display: flex;
+  grid-gap: 4px;
+}
+
+.control-panel-player-statuses {
+  display: flex;
+  margin-top: 4px;
+}

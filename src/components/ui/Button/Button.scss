@@ -1,0 +1,24 @@
+@import '@/styles/abstract';
+
+.button {
+  @include scaledRem('font-size', $baseFontSize, $mobileFontSize);
+
+  align-items: center;
+  background-color: $black;
+  border: 3px solid $main;
+  border-radius: 3px;
+  color: $white;
+  cursor: pointer;
+  display: flex;
+  font-family: $fontFamilyBase;
+  justify-content: center;
+  padding: 10px 30px;
+
+  &:disabled {
+    cursor: default;
+  }
+
+  &_main {
+    border-color: $main;
+  }
+}

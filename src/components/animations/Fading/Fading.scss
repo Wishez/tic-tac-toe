@@ -1,0 +1,27 @@
+@import "@/styles/abstract";
+
+.fading {
+
+  &-enter, &-enter-active, &-exit, &-exit-active {
+    transition-duration: 0.25s;
+    transition-property: opacity, display;
+    transition-timing-function: $sharp;
+    will-change: opacity, display;
+  }
+
+  &-exit-done {
+    display: none !important;
+  }
+
+  &-enter {
+    opacity: 0;
+  }
+
+  &-enter-active, &-exit {
+    opacity: 1;
+  }
+
+  &-exit-active {
+    opacity: 0;
+  }
+}
